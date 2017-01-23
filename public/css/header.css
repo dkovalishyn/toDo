@@ -1,0 +1,51 @@
+.header{
+}
+.logo {
+   text-align: center;
+}
+.footer__logo {
+    width: 30%;
+    margin: 0 auto;
+}
+.slider{
+    text-align: center;
+    overflow: hidden;
+    height: 624px;
+    background-color: white;
+}
+.nav{
+    padding: 8px;
+    min-height: 96px;
+    position: relative;
+}
+.nav a.btn__login{
+    position: absolute;
+    right: 16px;
+    top: 36px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.owl-theme .owl-nav.disabled+.owl-dots{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 24px;
+    z-index:999;
+}
+
+.owl-theme .owl-dots .owl-dot span{
+    background-color: #2196f3;
+    
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span{
+    background-color: #ff4081;
+}
+
+.owl-theme .owl-dots .owl-dot{
+    zoom: 1.5;
+}
+.owl-dot span{
+    border-radius: 30px;
+    behavior: url(/public/css/PIE.htc);
+}

@@ -1,0 +1,67 @@
+@media screen and (max-width: 1024px){
+      div[class^="col"]{
+          width: 33,33%;  
+      } 
+      div.col-12{
+          width: 100%;  
+      } 
+}
+@media screen and (max-width: 768px){
+      div[class^="col"]{
+          width: 50%;  
+      } 
+      div.col-12{
+          width: 100%;  
+      } 
+         .calendar__day{
+          width: 100%;
+          height: 400px;
+      }
+      .calendar__day p{
+          font-size: 56px;
+      }
+      .calendar__task{
+          color: white;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 56px;
+      }
+      .calendar__day_header,
+      .calendar__day_empty{
+          position: absolute;
+          left: -9999px;
+      }
+       .calendar__task_more{
+           border-radius: 16px;
+           margin: 8px 56px;
+           font-size: 56px;
+      }
+      .calendar__task_starting {
+            border-top-left-radius: 16px;
+            border-bottom-left-radius: 16px;
+            padding-left: 40px;
+            margin-left: 56px;
+    }
+      .calendar__task_ending {
+            border-top-right-radius: 16px;
+            border-bottom-right-radius: 16px;
+            padding-right: 40px;
+            margin-right: 56px;
+    }
+      .modal__task_view{
+          font-size: 36px;
+      }
+      
+}
+@media screen and (max-width: 425px){
+     .logo {
+          width: 60%;
+      }
+      span{
+          padding-left: 16px; 
+      }
+      div[class^="col"]{
+          width: 100%;  
+      } 
+ 
+}

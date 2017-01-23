@@ -1,0 +1,79 @@
+.main-menu a {
+    display: block;
+    padding: 8px 8px;
+    margin-bottom: 8px;
+    border-radius: 2px;
+    color: #597a96;
+    font-size: medium;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+}
+.user-menu a:hover{
+    color: #2196f3;
+    background-color: #e3e7eb;
+}
+.user-menu{
+    font-size: 0;
+}
+.user-menu__avatar,
+.user-menu__information{
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 24px;
+}
+.user-menu__avatar.active {
+    border: 1px solid #ff4081;
+}
+.user-menu__avatar {
+    width: 60px;
+    overflow: hidden;
+    height: 60px;
+    border-radius: 60px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-image: url(../img/avatars/ava.jpg);
+    background-size: cover;
+    -ms-behavior: url(/public/css/backgroundsize.min.htc);
+    margin-right: 8px;
+}
+.user-menu__information{
+    width: 60%;
+}
+.user-menu__avatar img {
+    border-radius: 35px;
+}
+.user-menu__information p{
+    font-size: medium;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+}
+.user-menu__information p span{
+  color: #2196f3;
+}
+ul.main-menu{
+    padding: 0;
+    list-style-type: none;
+}
+
+ul.main-menu li {
+    position: relative;
+}
+ul.sub-menu{
+    position: absolute;
+    top: 0;
+    left: 150px;
+    padding: 8px;
+    display: none;
+    z-index: 10;
+    padding-left: 8px;
+    background-color: white;
+    width: 230px;
+}
+
+ul.main-menu>li:hover .sub-menu{
+    display: block;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    border: 1px solid #eee;
+}
