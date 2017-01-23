@@ -16,7 +16,7 @@ var Message = require('./message');
     comments - комментарии к задаче
 */
 function Task(data){
-    var author, executives, startDate, endDate, color, description, id, status, mm;
+    var author, executives, startDate, endDate, color, description, id, status, mm, timestamp, lastChange;
     if (data){
         author = data.author;
         executives = data.executives;
@@ -27,14 +27,16 @@ function Task(data){
         id = data.id;
         status = data.status;
         mm = data.mm;
+        timestamp = data.timestamp;
+        lastChange = data.lastChange;
     }
     this.id = id || 0;
     this.author = author || '';
     this.executives = executives || [];
     this.startDate = moment(startDate) || moment();
     this.endDate = moment(endDate) || moment();
-    this.timestamp = moment();
-    this.lastChange = moment();
+    this.timestamp = moment(timestamp) || moment();
+    this.lastChange = lastChange || moment();
     this.description = description || 'Описание задачи';
     this.progress = 0;
     this.status = status || 'active';

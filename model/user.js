@@ -12,7 +12,7 @@ role - права пользователя
 */
 function User(user){
     var Task = require('./task');
-    var name, secondName, lastName, photo, login, birthday, tasks, role, email;
+    var name, secondName, lastName, photo, login, birthday, tasks, role, email, timestamp;
     if (user){
         name = user.name;
         secondName = user.secondName;
@@ -23,6 +23,7 @@ function User(user){
         tasks = user.tasks;
         role = user.role;
         email = user.email;
+        timestamp = user.timestamp;
     }
     this.name = name || 'anonym';
     this.secondName = secondName || '';
@@ -31,7 +32,7 @@ function User(user){
     this.login = login || Math.random()*Number.MAX_VALUE;
     this.birthday = birthday || moment();
     this.role = role || 'user';
-    this.timestamp = moment();
+    this.timestamp = moment(timestamp) || moment();
     this.tasks = new TasksManager();
     this.email = email || "todo.ontime@gmail.com";
     if(tasks){

@@ -5,7 +5,7 @@ function Message(data){
     this.from = data.from;
     this.to = data.to;
     this.content = data.content;
-    this.timestamp = moment();
+    this.timestamp = moment(data.timestamp) ||moment();
 }
 
 Message.prototype.getFrom = function(){
