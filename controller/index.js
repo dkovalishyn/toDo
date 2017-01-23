@@ -34,7 +34,7 @@ app.route('','/main',function(params){
 });
 
 app.route('','/main/activity',function(params){
-    params.log = model.getLogger().log;
+    params.log = model.getLogger().log.sort().reverse();
     this.render('./templates/main/activity.pug', params);
 });
 

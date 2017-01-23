@@ -123,10 +123,12 @@ App.prototype.initiateNotifications = function(){
 
     for(var i = 0; i < tasks.length; i++){
         for(var j = 0; j < tasks[i].length; j++){
+            if(moment(tasks[i][j].endDate).isAfter()){
                 var key = moment(tasks[i][j].endDate).subtract(1,'d').format('x');
                 this.notifications[key] = {
                     task: tasks[i][j],
                     email: users[i].email };
+            }
         }
     }
     
