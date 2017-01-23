@@ -98,7 +98,7 @@ function init() {
         if (err) console.error(err);
         model.loadData(content);
         app.initiateNotifications();
-        var notification =  schedule.scheduleJob('10 * * * * *', app.checkForNotifications);
+        var notification =  schedule.scheduleJob('* * 12 * * *', app.checkForNotifications);
     });
     
 }
