@@ -113,7 +113,6 @@ label {
 }
 .modal table{
     margin: 24px; 
-    font-family: Arial, sans-serif;
     border-collapse: collapse;
 }
 
@@ -124,7 +123,6 @@ label {
     text-transform: none;
 }
 #content table{
-    font-family: Arial, sans-serif;
     padding-right: 16px;
     padding-left: 16px;
     border-collapse: collapse;
@@ -239,6 +237,25 @@ label {
     background-color: #FF4081;
     color: white;
 }
+.task__comment_header {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.task__comment_header p{
+    color: #2193f3;
+}
+.task__comment_header em{
+    color: #38638e;
+    font-style: normal;
+}
+.task__comment {
+    display: inline-block;
+    padding: 24px;
+    background-color: white;
+    border-radius: 8px;
+    color: #38638e;
+}
 .fixed-overlay {
     position: fixed;
     overflow: auto;
@@ -295,7 +312,7 @@ label {
 }
 .modal__frame_task table td{
     width: 45%;
-       padding: 8px; 
+    padding: 8px; 
 }
 .modal__frame button form{
     margin-top: 18px;
