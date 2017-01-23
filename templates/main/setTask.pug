@@ -1,0 +1,29 @@
+extends main.pug
+block script
+    script(src='/public/js/setTask.js')
+block content
+    p.error-description
+    .row
+        .col-6
+            label(for="user") Кому:
+        .col-6
+            input(type="text", id="user")  
+    .row
+        .col-6
+            label(for="start-date") Дата начала:
+        .col-6
+            input(type="text", id="start-date") 
+    .row
+        .col-6
+            label(for="end-date") Дата окончания:
+        .col-6
+            input(type="text", id="end-date")
+    .row
+        .col-6
+            label(for="description") Описание:
+        .col-6
+            textarea(rows="10", cols="45", id="description") 
+  
+    .row
+        .col-12
+            button(type="button", class="btn", id="set-task") Сохранить

@@ -1,0 +1,17 @@
+div.tasks-list
+    table
+        thead 
+            tr
+                th(data-id="sortStartDate") Дата начала
+                th(data-id="sortEndDate") Дата окончания
+                th(data-id="sortDescription") Описание
+                th(data-id="sortProgress") Прогресс
+                th(data-id="sortStatus") Статус
+        tbody 
+            each task in tasks
+                tr(data-id=task.id)
+                    td #{task.startDate.format('ll')}
+                    td #{task.endDate.format('ll')}
+                    td #{task.description}
+                    td #{task.progress}
+                    td #{task.status}

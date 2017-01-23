@@ -1,0 +1,16 @@
+.modal
+    .modal__frame
+        .modal__frame_login
+            form
+               .modal__text
+                    .modal__text_title
+                         p Авторизация
+                    p.error-description 
+                    input(type='text', name='login', placeholder='Имя', id="login")
+                    br
+                    input(type='text', name='password', placeholder='Пароль', id="pass")
+                    br
+                    button(class="btn", type='submit') Войти
+               .modal__text
+                    .modal__text_link
+                         a(href='/register') Создать аккаунт

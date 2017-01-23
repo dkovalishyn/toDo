@@ -1,0 +1,28 @@
+.card
+    .card__title
+        p Текущая информация по задачам:
+    .card__body
+        .info
+            .row
+                .col-3
+                    p Всего: #{total} 
+                .col-3
+                    p Активных: #{active.length} 
+                .col-3
+                    p Приостановлено: #{delayed.length} 
+                .col-3
+                    p Выполнено: #{done.length} 
+            .row
+                .col-12
+                    p Детальная информация во вкладках меню "Задачи"
+.card
+    .card__title
+        p Ваши коллеги:
+    .card__body
+        .row
+            each collegue in collegues 
+                .col-3
+                      a(href="/main/user/" + collegue.login)
+                         .user-menu__avatar(style="background-image: url('/public/img/avatars/" + collegue.photo + "')")
+                         .user-menu__information
+                            p #{collegue.name||'Anonym' + ' ' + collegue.lastName||''}

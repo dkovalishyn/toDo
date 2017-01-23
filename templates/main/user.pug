@@ -1,0 +1,55 @@
+extends main.pug
+block content
+    .user__card
+        .row
+            .col-4 
+                p Фамилия
+            .col-4 
+                p #{slug.lastName}
+            .col-4 
+        .row
+            .col-4 
+                p Имя
+            .col-4
+                p #{slug.name}
+            .col-4 
+        .row
+            .col-4 
+                p Отчество
+            .col-4 
+                p #{slug.secondName}
+            .col-4 
+        .row
+            .col-4 
+                p E-mail
+            .col-4 
+                p #{slug.email}
+            .col-4  
+        .row
+            .col-4 
+                p Фото
+            .col-4 
+                p #{slug.photo}
+            .col-4 
+        .row
+            .col-4 
+                p Логин
+            .col-4 
+                p #{slug.login}
+            .col-4 
+        .row
+            .col-4 
+                p Дата рождения
+            .col-4 
+                p #{slug.birthday}
+            .col-4 
+        .row
+            .col-4 
+                p Роль
+            .col-4 
+                p #{slug.role}
+            .col-4 
+        .row
+            .col-12
+                if(user.login === slug.login)
+                    a(class="btn", href="/main/profile") Редактировать

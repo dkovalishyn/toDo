@@ -1,0 +1,10 @@
+.calendar__day
+    p #{date.date()}
+    each task, index in tasks
+        if(index < 3)
+            div(class=task.htmlClass, data-id=task.id)
+                span #{task.description}
+    if(tasks.length > 3)
+        div(class='calendar__task_more', data-id=date.format('x'))
+            span Ещё #{tasks.length - 3}
+        

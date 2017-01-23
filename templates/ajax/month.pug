@@ -1,0 +1,41 @@
+.calendar 
+    - 
+        var dayNames = ['ПН','ВТ','СР','ЧТ','ПТ','СБ','ВС']
+        var monthNames = ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль', 'Август', 'Сентябрь', 'Октябрь','Ноябрь','Декабрь']
+    .calendar__controls
+        .calendar__controls_users
+            each user in users
+                - var active = (user.login===id)?'active':'';
+                a(class='calendar__controls_user ', href='/main/calendar/'+user.login)
+                     div(
+                        class='user-menu__avatar '+active, 
+                        style="background-image: url('/public/img/avatars/" + user.photo + "')"
+                        data-login=user.login)
+        .calendar__controls_buttons
+            p #{calendar.currentMonth.year()}
+            i.fa.fa-caret-left#previous-month
+            span#curr-month #{monthNames[calendar.currentMonth.month()]}
+            i.fa.fa-caret-right#next-month
+    - for (var i = 0; i < 7; i++)
+        .calendar__day.calendar__day_header
+            p #{dayNames[i]}
+    - var weekdayOfFirstDay = calendar.days[0].date.weekday();
+    - for (var i = 0; i <  weekdayOfFirstDay; i++)
+        .calendar__day.calendar__day_empty
+    each day in calendar.days
+        .calendar__day
+            p #{day.date.date()}
+            each task, index in day.tasks
+                if(index < 3)
+                        div(class=task.htmlClass, data-id=task.id, data-desc=task.description)
+                            if(/starting/gi.test(task.htmlClass))
+                                span #{task.description}
+                            else
+                                span &nbsp;
+            -var activeTasks = day.tasks.filter(function(task){return !(/empty/gi.test(task.htmlClass))})
+            if(activeTasks.length > 3)
+                div(class='calendar__task_more', data-id=day.date.format('x'))
+                    span Ещё #{activeTasks.length - 3}
+    - var weekdayOfLastDay = calendar.days[calendar.days.length-1].date.weekday();
+    - for (var i = weekdayOfLastDay + 1; i <  7; i++)
+        .calendar__day.calendar__day_empty

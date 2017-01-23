@@ -1,0 +1,20 @@
+extends main.pug
+block script
+    script(src="/public/js/roles.js")
+block content
+    each user in users 
+        .row
+            .col-6
+                  a(href="#!/main/user/"+user.login)
+                     .user-menu__avatar(style="background-image: url('/public/img/avatars/" + user.photo + "')")
+                     .user-menu__information
+                        p Имя 
+                            span #{user.name||'Anonym' + ' ' + user.lastName||''}       
+                        p Логин 
+                            span #{user.login}       
+            .col-6
+                p Текущая роль: #{user.role}
+                select(name=user.login)
+                    option(value="user", selected=(user.role === 'user')) Пользователь
+                    option(value="manager", selected=(user.role === 'manager')) Менеджер
+    button.btn Сохранить

@@ -1,0 +1,51 @@
+extends main.pug
+block script
+    script(src='/public/js/profile.js')
+block content
+    .user__profile
+        form  
+           .row
+                .col-4 
+                    p Логин
+                .col-4 
+                    p #{login}
+                .col-4 
+           .row
+                .col-4 
+                    p E-mail
+                .col-4 
+                    input(type="text", id="email", name="email", placeholder=user.email)
+                .col-4
+           .row
+                .col-4 
+                    p Фамилия
+                .col-4 
+                    input(type="text", id="last-name", name="last-name", placeholder=user.lastName)
+                .col-4 
+           .row
+                .col-4
+                    p Имя
+                .col-4
+                    input(type="text", id="name", name="name", placeholder=user.name)
+                .col-4 
+           .row
+                .col-4
+                    p Отчество
+                .col-4 
+                   input(type="text", id="second-name", name="second-name", placeholder=user.secondName)
+                .col-4 
+           .row
+                .col-4
+                    p Фото
+                .col-4 
+                   input(type="text", id="photo", name="photo", placeholder=user.photo)
+                .col-4 
+           .row
+                .col-4 
+                    p Дата рождения
+                .col-4 
+                   input(type="text", id="birthday", name="birthday")
+                .col-4 
+           .row
+                .col-12
+                    button(class="btn", type="button") Сохранить

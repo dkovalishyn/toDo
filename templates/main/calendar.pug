@@ -1,0 +1,7 @@
+extends main.pug
+
+block append script
+    script(src='/public/js/calendar.js')
+    script(src='/public/libs/rangeslider.min.js')
+block content
+    include ../ajax/month.pug

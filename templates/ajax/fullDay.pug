@@ -1,0 +1,15 @@
+div.modal
+    div.modal__frame
+        em #{date.format('ll')}
+        table
+            thead 
+                tr
+                    th Описание
+                    th Прогресс
+                    th Статус
+            tbody 
+                each task in tasks  
+                    tr
+                        td #{task.description}
+                        td #{task.progress}
+                        td #{task.status}

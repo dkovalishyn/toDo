@@ -1,0 +1,92 @@
+extends index.pug
+block style
+    link(rel="stylesheet", href="/public/css/owl.carousel.min.css")
+    link(rel="stylesheet", href="/public/css/owl.theme.default.min.css")
+block script
+    script(src="/public/js/home.js")
+block modal
+    include modal/login.pug
+block main
+    .owl-carousel.owl-theme
+            img(class="owl-lazy", data-src="/public/img/slider/slide1.jpg", alt="slide-1")
+            img(class="owl-lazy", data-src="/public/img/slider/slide2.jpg", alt="slide-2")
+            img(class="owl-lazy", data-src="/public/img/slider/slide3.jpg", alt="slide-3")
+    section.features
+        div.row
+            div.col-12
+                div.features__title
+                    h1 Преимущества системы отслеживания заданий toDo - on time
+        div.row
+            div.col-3
+                div.content-box 
+                        div.content-box__icon
+                            img(src='/public/img/icons/png/Calendar.png', alt='Feature 1')
+                        div.content-box__description
+                            h2 Отслеживайте задачи
+                            p Анализируйте текущее состояние дел всего-лишь с одного взгляда. Удобный календарь поможет определить, какое количество задач стоит перед вами и какие следует сделать в первую очередь.
+            div.col-3
+                div.content-box 
+                        div.content-box__icon
+                            img(src='/public/img/icons/png/Gears.png', alt='Feature 2')
+                        div.content-box__description
+                            h2  Координируйте работу
+                            p Вы можете просматривать текущие задачи друзей или сотрудников и легко определить, кто из них более загружен, а кто менее. И таким образом распределить задачи с максимальной эффективностью.
+            div.col-3
+                div.content-box 
+                        div.content-box__icon
+                            img(src='/public/img/icons/png/List.png', alt='Feature 3')
+                        div.content-box__description
+                            h2 Обсуждайте задачи
+                            p Вы можете оставлять комментарии к задачам. Это позволит в будущем найти информацию касательно задач, определить исход совещаний и просто понять, почему вы сделали эту задачу именно так, а не иначе.
+            div.col-3
+                div.content-box 
+                        div.content-box__icon
+                            img(src='/public/img/icons/png/light-bulb.png', alt='Feature 4')
+                        div.content-box__description
+                            h2 Напоминания и уведомления
+                            p Настраиваемая система напоминаний позволит контролировать, когда подходит срок сдачи проекта и не упускать из виду ни единой задачи
+        div.row
+            div.col-3
+                div.content-box 
+                        div.content-box__icon
+                            img(src='/public/img/icons/png/analytics.png', alt='Feature 5')
+                        div.content-box__description
+                            h2  Фильтрация по дате
+                            p Задачи имеют множество точек привязки к временной шкале, что позволяет отследить, когда была создана, когда выполнена, когда изменилась, что будет большим плюсом в последующем анализе работы.
+            div.col-3
+                div.content-box 
+                        div.content-box__icon
+                            img(src='/public/img/icons/png/team.png', alt='Feature 6')
+                        div.content-box__description
+                            h2  Обмен сообщениями
+                            p Поможет поддерживать отношения между сотрудниками, даже если они находятся далеко и работают удаленно. Стоит иногда отвлечься от работы и спросить своего коллегу, как дела.
+            div.col-3
+                div.content-box 
+                        div.content-box__icon
+                            img(src='/public/img/icons/png/search.png', alt='Feature 7')
+                        div.content-box__description
+                            h2 Удобный поиск информации
+                            p Вы с легкостью сможете найти любой контент, будь то задача, пользователь или сообщение. Удобный поиск по названию материала или идентификатору.
+
+            div.col-3
+                div.content-box 
+                        div.content-box__icon
+                            img(src='/public/img/icons/png/coins.png', alt='Feature 8')
+                        div.content-box__description
+                            h2 И все это бесплатно
+                            p Для пользования программой, все что нужно - это зарегестрироваться. Вы абсолютно не ограничены в функционале в бесплатной версии.
+    section
+        .content-box
+            .row
+                .col-12
+                    .content-box__title
+                        h1 Попробуйте toDO прямо сейчас!
+            .row
+                .col-12
+                    .content-box__body
+                        p.
+                            toDo - это площадка, где вы сможете общаться, организовывать свое время и координироваться с другими людьми. В вашем распоряжении просмотр задач в виде календаря, в виде списка, обмен сообщениями и уведомления по электронной почте. И самое главное - toDO абсолютно <strong>бесплатно</strong>. Для того, чтобы начать работать, достаточно просто зарегестрироваться. Придумайте себе имя, пароль и пусть ваша жизнь станет немножечко организованней.
+            .row
+                .col-12
+                    .content-box__footer_centered
+                        a.btn.btn-large(href='/register') Зарегестрироваться            

@@ -1,0 +1,36 @@
+extends ../index.pug
+block main
+    div.row
+        .col-3
+            aside
+                .content-box
+                    .user-menu
+                        .user-menu__avatar(style="background-image: url('/public/img/avatars/" + user.photo + "')")
+                        .user-menu__information
+                                    p #{user.name||'Anonym' + ' ' + user.lastName||''}  
+                        ul.main-menu
+                            li 
+                                a(href='/main/activity') Новости
+                            li
+                                a(href='/main') Задачи
+                                ul.sub-menu
+                                    li 
+                                        a(href='/main/calendar/' + user.login) Календарь
+                                    li 
+                                        a(href='/main/tasks-list') Список
+                                    if(user.role == 'manager')
+                                        li 
+                                            a(href='/main/set-task') Поставить задачу
+
+                            li 
+                                a(href='/main/user/' + user.login) Анкета
+                            if(user.role == 'manager')        
+                                li 
+                                    a(href='/main/roles') Изменить права
+                            li 
+                                a(href='/api/endSession') Выйти
+        .col-9 
+            .content-box
+                #content
+                    block content
+                        include ../includes/stats.pug

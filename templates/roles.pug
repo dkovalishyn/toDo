@@ -1,0 +1,13 @@
+each user in users 
+    .row
+        .col-6
+              a(href="#!/main/user/#{user.login}")
+                 .user-menu__avatar(style="background-image: url('#{user.photo}')")
+                 .user-menu__information
+                    p #{user.name||'Anonym' + ' ' + user.lastName||''}       
+        .col-6
+            p Текущая роль: #{user.role}
+            select(name="#{user.login}")
+                option(value="user") Пользователь
+                option(value="manager") Менеджер
+button.btn Сохранить

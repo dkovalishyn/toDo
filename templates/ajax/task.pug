@@ -1,0 +1,94 @@
+.modal.modal__task
+    .modal__frame
+        .modal__frame_task
+            .row
+                .col-8
+                    table
+                        tr
+                            td Идентификатор:
+                            td #{task.id}
+                        tr
+                            td Автор:
+                            td #{task.author}
+                        tr
+                            td Дата начала задачи:
+                            td #{task.startDate.format('l')}
+                        tr
+                            td Дата окончания задачи:
+                            td #{task.endDate.format('l')}
+                        tr
+                            td Дата создания:
+                            td #{task.timestamp.format('l')}
+                        tr
+                            td Прогресс:
+                            td #{task.progress}
+                        tr
+                            td Описание:
+                            td #{task.description}
+                .col-4
+                    div.task-conols
+                        div.status
+                            p Статус: 
+                            input(
+                                type="radio"
+                                id="play"
+                                name="status"
+                                value="active"
+                                checked=(task.status=='active'))
+                            label(for="play")  
+                                i(class="fa fa-play" )
+
+                            input(
+                                type="radio"
+                                id="pause"
+                                name="status"
+                                value="delayed"
+                                checked=(task.status=='delayed'))
+                            label(for="pause")
+                                -var active=(task.status=='active')?'active':'';
+                                i(class="fa fa-pause")
+
+                            input(
+                                type="radio"
+                                id="stop"
+                                name="status"
+                                value="done"
+                                checked=(task.status=='done'))
+                            label(for="stop")  
+                                i(class="fa fa-stop")
+
+                        div.progress
+                            p Прогресс:
+                            input(
+                                type="range",
+                                min=0,
+                                max=100,
+                                step=1,
+                                value=task.progress,
+                                disabled=(task.status=='done'))
+                            button(class="btn", type="button", id="save-progress") Сохранить 
+                            a(class="btn btn-close", href="/main/calendar/" + user.login) Закрыть
+            div.task__comments
+                div.task__comments_head
+                     div.row
+                        div.col-12
+                            p Последние комментарии
+                div.task__comments_body
+                    each message in task.mm.getCollection()
+                        div.row
+                            div.col-12
+                                div.task__comment
+                                    em #{message.timestamp.format('l')}
+                                    p  #{message.from}
+                                    p  #{message.content}
+
+                div.task__comments_footer
+                    div.row
+                        div.col-8
+                            input(type='text')
+                        div.col-4
+                            button(class='btn', type='button', name='send-comment') Отправить
+
+
+
+
