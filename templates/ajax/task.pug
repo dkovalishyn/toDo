@@ -26,8 +26,8 @@
                             td Описание:
                             td #{task.description}
                 .col-4
-                    div.task-conols
-                        div.status
+                    .task-conols
+                        .status
                             p Статус: 
                             input(
                                 type="radio"
@@ -57,7 +57,7 @@
                             label(for="stop")  
                                 i(class="fa fa-stop")
 
-                        div.progress
+                        .progress
                             p Прогресс:
                             input(
                                 type="range",
@@ -68,25 +68,27 @@
                                 disabled=(task.status=='done'))
                             button(class="btn", type="button", id="save-progress") Сохранить 
                             a(class="btn btn-close", href="/main/calendar/" + user.login) Закрыть
-            div.task__comments
-                div.task__comments_head
-                     div.row
-                        div.col-12
+            .task__comments
+                .task__comments_head
+                     .row
+                        .col-12
                             p Последние комментарии
-                div.task__comments_body
+                .task__comments_body
                     each message in task.mm.getCollection()
-                        div.row
-                            div.col-12
-                                div.task__comment
-                                    em #{message.timestamp.format('l')}
-                                    p  #{message.from}
+                        .row
+                            .col-12
+                                .task__comment
+                                    .task__comment_header
+                                        p  #{message.from}
+                                        em #{message.timestamp.format('l')}
+                                    .task__comment_body
                                     p  #{message.content}
 
-                div.task__comments_footer
-                    div.row
-                        div.col-8
+                .task__comments_footer
+                    .row
+                        .col-8
                             input(type='text')
-                        div.col-4
+                        .col-4
                             button(class='btn', type='button', name='send-comment') Отправить
 
 
