@@ -293,7 +293,7 @@ label {
     width: 70%;
 }
 .modal__frame{
-    padding: 24px;
+    padding: 0 24px;
     text-align: left;
     white-space: normal;
     background-color: white;    
@@ -312,7 +312,7 @@ label {
 }
 .modal__frame_task table td{
     width: 45%;
-    padding: 8px; 
+    padding: 4px; 
 }
 .modal__frame button form{
     margin-top: 18px;
@@ -326,7 +326,7 @@ label {
 
 .status p{
     text-transform: uppercase;
-    margin-bottom: 24px;
+    margin-bottom: 0;
 }
 
 input[type="text"],
@@ -447,11 +447,9 @@ input[value="delayed"][checked="checked"]~label>i.fa-pause,
 input[value="done"][checked="checked"]~label>i.fa-stop{
     color: #2196f3;
 }
-.task__comments{
-    margin-top: 16px;
-}
 .task__comments_head p {
     text-transform: uppercase;
+    margin-top: 0;
 }
 .task__comments_body {
     background-color: #eef2f4; 

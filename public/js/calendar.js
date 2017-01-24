@@ -121,7 +121,7 @@ var task = {
     },
     sendMessage: function(){
         var text = $('input[type="text"]').val();
-        if (!text) return;
+        if (text.length === 0) return;
         $.ajax({
             method:"POST",
             url:"/api/sendMessage/" + getTaskID() + '?login=' + getLogin(),
