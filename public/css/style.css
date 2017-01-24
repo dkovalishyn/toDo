@@ -293,8 +293,8 @@ label {
     width: 70%;
 }
 .modal__frame{
-    padding: 0 24px;
     text-align: left;
+    padding: 24px;
     white-space: normal;
     background-color: white;    
     color: black;
@@ -304,6 +304,7 @@ label {
 }
 .modal__frame_task {
     text-transform: none; 
+    padding: 0 24px;
 }
 
 
