@@ -42,6 +42,9 @@ $(function(){
             return;
         }
         
+        data.startDate = startDate.format('x');
+        data.endDate = endDate.format('x');
+        
         $.ajax({
             method: "POST",
             url: "/api/setTask",

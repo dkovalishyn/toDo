@@ -82,7 +82,7 @@ var calendar = {
     getTask: function(id){
         $.ajax({
             method: 'GET',
-            url: '/api/getTask/' + id,
+            url: '/api/getTask/' + id + '?login=' + getLogin(),
             success: function(html){
                 $('.fixed-overlay').html(html);
                 task.show();
@@ -124,11 +124,11 @@ var task = {
         if (!text) return;
         $.ajax({
             method:"POST",
-            url:"/api/sendMessage/" + getTaskID(),
+            url:"/api/sendMessage/" + getTaskID() + '?login=' + getLogin(),
             data: {text: encodeURIComponent(text)},
             success: function(html){
                 $('.fixed-overlay').html(html); 
-                task.show();
+                $('input[type="range"]').ionRangeSlider();
             },
             error: function(e, textStatus){
                 console.log("Error: " + textStatus);

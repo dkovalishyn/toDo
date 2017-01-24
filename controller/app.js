@@ -131,8 +131,8 @@ App.prototype.initiateNotifications = function(){
             }
         }
     }
-    
-   this.checkForNotifications();
+
+    this.checkForNotifications();
 };
 
 App.prototype.addNotification = function(params){

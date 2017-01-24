@@ -84,7 +84,7 @@ function getLogin(req){
         secret = cookies.secret;
     if(!app.tokens[secret]) return false;
     return app.tokens[secret].login;
-};
+}
 
 
 

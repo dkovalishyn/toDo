@@ -114,13 +114,17 @@ app.route('','/api/getCalendar/:id',function(params){
 });
 
 app.route('','/api/getTask/:id',function(params){
-    var user = model.getUserByLogin(params.login);
+    if(!params.query.login){
+        params.res.statusCode = "401";
+        params.res.end('Forbidden');
+        return;
+    }
+    var user = model.getUserByLogin(params.query.login);
     params.task = user.tasks.getTaskById(params.id);
     this.render('./templates/ajax/task.pug', params);
 });
 
 app.route('','/api/getDay/:id',function(params){
-    var date = moment(+params.id);
     var date = moment(+params.id);
     params.date = date;
     params.tasks = params.user.tasks.getTasksForDate(date);
@@ -128,9 +132,15 @@ app.route('','/api/getDay/:id',function(params){
 });
 
 app.route('','/api/sendMessage/:id',function(params){
-    var task = params.user.tasks.getTaskById(params.id);
+    if(!params.query.login){
+        params.res.statusCode = "401";
+        params.res.end('Forbidden');
+        return;
+    }
+    var user = model.getUserByLogin(params.query.login);
+    var task = user.tasks.getTaskById(params.id);
     if(task){
-        params.task = params.user.tasks.getTaskById(params.id);
+        params.task = task;
         var message = {
             content: decodeURIComponent(params.body.text),
             from: params.user.login,
@@ -198,6 +208,9 @@ app.route('','/api/setTask',function(params){
     params.body.author = params.user.login;
     //Описание задачи
     params.body.description = decodeURIComponent(params.body.description); 
+    //Даты преобразовать из строки в число.
+    params.body.startDate = Number(params.body.startDate); 
+    params.body.endDate = Number(params.body.endDate); 
     //Добавить задачу
     user.tasks.add(params.body);
     
@@ -205,10 +218,6 @@ app.route('','/api/setTask',function(params){
     var email = model.getUserByLogin(params.body.login).email;
     params.email = email;
     app.addNotification(params);
-    //debug
-    for(var key in params.body){
-        console.log(key + ' : ' + params.body[key]);
-    }
     
     model.save();
     params.res.end("Success");

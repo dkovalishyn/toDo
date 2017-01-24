@@ -16,7 +16,7 @@
                 , "startDate": "2017-01-14T22:00:00.000Z"
                 , "endDate": "2017-01-15T22:00:00.000Z"
                 , "timestamp": "2017-01-14T13:15:32.407Z"
-                , "lastChange": "2017-01-23T14:02:12.975Z"
+                , "lastChange": "2017-01-24T21:06:05.588Z"
                 , "description": "Изучить основы webpack"
                 , "progress": 0
                 , "status": "delayed"
@@ -28,11 +28,17 @@
                         , "content": "Первый комментарий"
                         , "timestamp": "2017-01-23T14:02:12.975Z"
                         , "id": 0
+                    }, {
+                        "from": "denis"
+                        , "to": 0
+                        , "content": "Comment from denis"
+                        , "timestamp": "2017-01-24T21:06:05.588Z"
+                        , "id": 1
                     }]
                 }
                 , "viewPosition": 0
             }, {
-                "id": 2
+                "id": 1
                 , "author": "System"
                 , "executives": []
                 , "startDate": "2017-01-15T22:00:00.000Z"
@@ -46,9 +52,9 @@
                 , "mm": {
                     "_collection": []
                 }
-                , "viewPosition": 2
+                , "viewPosition": 1
             }, {
-                "id": 3
+                "id": 2
                 , "author": "System"
                 , "executives": []
                 , "startDate": "2017-01-15T22:00:00.000Z"
@@ -62,9 +68,9 @@
                 , "mm": {
                     "_collection": []
                 }
-                , "viewPosition": 3
+                , "viewPosition": 2
             }, {
-                "id": 4
+                "id": 3
                 , "author": "System"
                 , "executives": []
                 , "startDate": "2017-01-15T22:00:00.000Z"
@@ -78,9 +84,9 @@
                 , "mm": {
                     "_collection": []
                 }
-                , "viewPosition": 4
+                , "viewPosition": 3
             }, {
-                "id": 1
+                "id": 4
                 , "author": "System"
                 , "executives": []
                 , "startDate": "2017-01-15T22:00:00.000Z"
@@ -94,7 +100,7 @@
                 , "mm": {
                     "_collection": []
                 }
-                , "viewPosition": 1
+                , "viewPosition": 4
             }, {
                 "id": 5
                 , "author": "System"
@@ -126,7 +132,7 @@
                 , "mm": {
                     "_collection": []
                 }
-                , "viewPosition": 2
+                , "viewPosition": 1
             }, {
                 "id": 7
                 , "author": "System"
@@ -175,6 +181,52 @@
                     "_collection": []
                 }
                 , "viewPosition": 1
+            }, {
+                "id": 10
+                , "author": "denis"
+                , "executives": []
+                , "startDate": null
+                , "endDate": null
+                , "timestamp": "2017-01-24T20:21:40.419Z"
+                , "lastChange": "2017-01-24T20:21:40.419Z"
+                , "description": " test"
+                , "progress": 0
+                , "status": "active"
+                , "color": "red"
+                , "mm": {
+                    "_collection": []
+                }
+            }, {
+                "id": 11
+                , "author": "denis"
+                , "executives": []
+                , "startDate": null
+                , "endDate": null
+                , "timestamp": "2017-01-24T20:22:31.039Z"
+                , "lastChange": "2017-01-24T20:22:31.039Z"
+                , "description": "test"
+                , "progress": 0
+                , "status": "active"
+                , "color": "red"
+                , "mm": {
+                    "_collection": []
+                }
+            }, {
+                "id": 12
+                , "author": "denis"
+                , "executives": []
+                , "startDate": "2017-01-23T22:00:00.000Z"
+                , "endDate": "2017-01-23T22:00:00.000Z"
+                , "timestamp": "2017-01-24T20:25:14.261Z"
+                , "lastChange": "2017-01-24T20:25:14.261Z"
+                , "description": " test"
+                , "progress": 0
+                , "status": "active"
+                , "color": "red"
+                , "mm": {
+                    "_collection": []
+                }
+                , "viewPosition": 2
             }]
         }
         , "email": "dkovalishyn@gmail.com"
@@ -189,7 +241,23 @@
         , "role": "user"
         , "timestamp": "2017-01-23T13:15:32.417Z"
         , "tasks": {
-            "_collection": []
+            "_collection": [{
+                "id": 0
+                , "author": "denis"
+                , "executives": []
+                , "startDate": "2017-01-23T22:00:00.000Z"
+                , "endDate": "2017-01-24T22:00:00.000Z"
+                , "timestamp": "2017-01-24T21:05:51.393Z"
+                , "lastChange": "2017-01-24T21:23:52.107Z"
+                , "description": " Long task"
+                , "progress": 0
+                , "status": "active"
+                , "color": "red"
+                , "mm": {
+                    "_collection": []
+                }
+                , "viewPosition": 0
+            }]
         }
         , "email": "todo.ontime@gmail.com"
         , "id": 1
@@ -203,7 +271,22 @@
         , "role": "user"
         , "timestamp": "2017-01-23T13:15:32.417Z"
         , "tasks": {
-            "_collection": []
+            "_collection": [{
+                "id": 0
+                , "author": "denis"
+                , "executives": []
+                , "startDate": "2017-01-23T22:00:00.000Z"
+                , "endDate": "2017-01-24T22:00:00.000Z"
+                , "timestamp": "2017-01-24T20:36:59.200Z"
+                , "lastChange": "2017-01-24T20:36:59.200Z"
+                , "description": " Long task from user Denis"
+                , "progress": 0
+                , "status": "active"
+                , "color": "red"
+                , "mm": {
+                    "_collection": []
+                }
+            }]
         }
         , "email": "todo.ontime@gmail.com"
         , "id": 2
