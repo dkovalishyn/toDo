@@ -293,8 +293,8 @@ label {
     width: 70%;
 }
 .modal__frame{
-    text-align: left;
     padding: 24px;
+    text-align: left;
     white-space: normal;
     background-color: white;    
     color: black;
@@ -304,7 +304,7 @@ label {
 }
 .modal__frame_task {
     text-transform: none; 
-    padding: 0 24px;
+    margin: -24px 0;
 }
 
 
@@ -328,6 +328,10 @@ label {
 .status p{
     text-transform: uppercase;
     margin-bottom: 0;
+}
+
+.progress p{
+    margin-top: 0;
 }
 
 input[type="text"],
